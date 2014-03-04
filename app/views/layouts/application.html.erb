@@ -7,29 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="navbar navbar-inverse" style="position: static;">
-              <div class="navbar-inner">
-                <div class="container">
-                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </a>
-                  <a class="brand" href="#">Treehouse</a>
-                  <div class="nav-collapse collapse navbar-inverse-collapse">
-                    <ul class="nav">
-                      <li class="active"><a href="#">Home</a></li>
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                  </div><!-- /.nav-collapse -->
-                </div>
-              </div><!-- /navbar-inner -->
-            </div>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+	  <a href="#" class="brand">Treebook</a>
+            <ul class="nav">
+              <li><%= link_to "All Statuses", statuses_path %></li>
+            </ul>
+	    <ul class="nav pull-right">
+	      <% if user_signed_in? %>
+	        <li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+	        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+	        <li><%= link_to "Register", new_user_registration_path %></li>
+		<li><%= link_to "Log in", new_user_session_path %></li>
+	      <% end %>
+	    </ul>
+        </div>
+       </div>
+     </div>
 
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>s
+
       <%= yield %>
+
     </div>
 </body>
 </html>
