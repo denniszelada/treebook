@@ -4,3 +4,10 @@ jason:
   email: "jazon@test.com"
   profile_name: "jasonz"
   encrypted_password: "password" 
+
+jim:
+  first_name: "Jim"
+  last_name: "Hoskins"
+  email: "jim@test.com"
+  profile_name: "jimhoskins"
+  encrypted_password: "password" 
