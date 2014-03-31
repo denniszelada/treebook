@@ -1,0 +1,3 @@
+class UserFriendshipsController < ApplicationController
+  
+end
