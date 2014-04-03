@@ -1,3 +1,2 @@
 class UserFriendshipsController < ApplicationController
-  
 end
