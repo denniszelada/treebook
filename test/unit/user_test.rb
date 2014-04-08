@@ -34,11 +34,11 @@ class UserTest < ActiveSupport::TestCase
     #puts user.errors.inspect
     assert !user.errors[:profile_name].empty?
   end
- 
+
  test "a user should have a profile name without spaces" do
     user = User.new(first_name: 'Jason', last_name: 'Seifer', email: 'jason2@test.com')
     user.password = user.password_confirmation = 'asdfasfd'
-    
+
     assert !user.save
     assert !user.errors[:profile_name].empty?
     assert user.errors[:profile_name].include?("Must be formatted correctly.")
@@ -63,5 +63,7 @@ class UserTest < ActiveSupport::TestCase
     assert users(:jason).friends.include?(users(:mike))
  end
 
-
+ test "that calling to_param on a user returns the profile_name" do
+  assert_equal "jasonz", users(:jason).to_param
+ end
 end

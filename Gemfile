@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'devise'
 gem 'simple_form'
+gem 'state_machine'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,4 +40,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 group :test do
       gem 'shoulda'
+      gem 'factory_girl_rails'
 end

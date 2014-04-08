@@ -6,7 +6,7 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
   # end
   test "that /login route opens the login page" do
     get '/login'
-    assert_response :sucess
+    assert_response :ok
   end
 
    test "that /logout route opens the login page" do
